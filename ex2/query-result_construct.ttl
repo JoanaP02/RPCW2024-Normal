@@ -1,0 +1,652 @@
+@prefix : <http://www.example.org/disease-ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+:Patient1 :hasDisease :Flu, :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Migraine, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue,
+    :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient2 :hasDisease :Diabetes, :Fungal_infection, :Drug_Reaction, :Chicken_pox,
+    :Dengue, :hepatitis_A .
+
+:Patient4 :hasDisease :Fungal_infection, :GERD, :Chronic_cholestasis, :Drug_Reaction,
+    :Peptic_ulcer_diseae, :Gastroenteritis, :Paralysis__brain_hemorrhage_, :Jaundice,
+    :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient5 :hasDisease :Fungal_infection, :Chronic_cholestasis, :Drug_Reaction, :Peptic_ulcer_diseae,
+    :Diabetes_, :Bronchial_Asthma, :Jaundice, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A,
+    :Hepatitis_B .
+
+:Patient13 :hasDisease :Fungal_infection, :Chronic_cholestasis, :Drug_Reaction, :Jaundice,
+    :Chicken_pox, :Dengue, :Hepatitis_B .
+
+:Patient16 :hasDisease :Fungal_infection, :Chronic_cholestasis, :Drug_Reaction, :Jaundice,
+    :Chicken_pox, :Dengue, :Hepatitis_B .
+
+:Patient24 :hasDisease :Fungal_infection, :Chronic_cholestasis, :Drug_Reaction, :Jaundice,
+    :Chicken_pox, :Dengue, :Hepatitis_B .
+
+:Patient25 :hasDisease :Fungal_infection, :Chronic_cholestasis, :Drug_Reaction, :Peptic_ulcer_diseae,
+    :AIDS, :Diabetes_, :Bronchial_Asthma, :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient36 :hasDisease :Fungal_infection, :GERD, :Chronic_cholestasis, :Drug_Reaction,
+    :Peptic_ulcer_diseae, :AIDS, :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient40 :hasDisease :Fungal_infection, :GERD, :Chronic_cholestasis, :Drug_Reaction,
+    :Peptic_ulcer_diseae, :AIDS, :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient44 :hasDisease :Fungal_infection, :Chronic_cholestasis, :Drug_Reaction, :Peptic_ulcer_diseae,
+    :AIDS, :Diabetes_, :Bronchial_Asthma, :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient54 :hasDisease :Fungal_infection, :GERD, :Chronic_cholestasis, :Drug_Reaction,
+    :Jaundice, :Chicken_pox, :Dengue, :Hepatitis_B .
+
+:Patient55 :hasDisease :Fungal_infection, :Chronic_cholestasis, :Drug_Reaction, :Peptic_ulcer_diseae,
+    :Diabetes_, :Bronchial_Asthma, :Jaundice, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A,
+    :Hepatitis_B .
+
+:Patient59 :hasDisease :Fungal_infection, :GERD, :Chronic_cholestasis, :Drug_Reaction,
+    :Peptic_ulcer_diseae, :AIDS, :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient74 :hasDisease :Fungal_infection, :GERD, :Chronic_cholestasis, :Drug_Reaction,
+    :Peptic_ulcer_diseae, :AIDS, :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient100 :hasDisease :Fungal_infection, :Chronic_cholestasis, :Drug_Reaction, :Jaundice,
+    :Chicken_pox, :Dengue, :Hepatitis_B .
+
+:Patient12 :hasDisease :Fungal_infection, :Drug_Reaction, :Chicken_pox, :Dengue .
+
+:Patient14 :hasDisease :Fungal_infection, :Drug_Reaction, :AIDS, :Bronchial_Asthma,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient23 :hasDisease :Fungal_infection, :Drug_Reaction, :AIDS, :Bronchial_Asthma,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient42 :hasDisease :Fungal_infection, :Allergy, :GERD, :Chronic_cholestasis, :Drug_Reaction,
+    :Peptic_ulcer_diseae, :AIDS, :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Hypertension_,
+    :Migraine, :Cervical_spondylosis, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient45 :hasDisease :Fungal_infection, :Drug_Reaction, :AIDS, :Bronchial_Asthma,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient48 :hasDisease :Fungal_infection, :Allergy, :GERD, :Chronic_cholestasis, :Drug_Reaction,
+    :Peptic_ulcer_diseae, :AIDS, :Gastroenteritis, :Bronchial_Asthma, :Hypertension_,
+    :Migraine, :Cervical_spondylosis, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient57 :hasDisease :Fungal_infection, :Drug_Reaction, :Chicken_pox, :Dengue, :hepatitis_A .
+
+:Patient76 :hasDisease :Fungal_infection, :Drug_Reaction, :AIDS, :Bronchial_Asthma,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient77 :hasDisease :Fungal_infection, :Drug_Reaction, :Chicken_pox, :Dengue, :hepatitis_A .
+
+:Patient60 :hasDisease :Allergy, :Malaria, :Dengue, :Typhoid .
+
+:Patient66 :hasDisease :Allergy, :GERD, :AIDS, :Diabetes_, :Bronchial_Asthma, :Hypertension_,
+    :Migraine, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue,
+    :Typhoid, :hepatitis_A .
+
+:Patient86 :hasDisease :Allergy, :GERD, :AIDS, :Diabetes_, :Bronchial_Asthma, :Hypertension_,
+    :Migraine, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue,
+    :Typhoid, :hepatitis_A .
+
+:Patient98 :hasDisease :Allergy .
+
+:Patient10 :hasDisease :Allergy, :Chronic_cholestasis, :Peptic_ulcer_diseae, :AIDS,
+    :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient41 :hasDisease :Allergy, :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae,
+    :AIDS, :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Migraine,
+    :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid,
+    :hepatitis_A, :Hepatitis_B .
+
+:Patient46 :hasDisease :Allergy, :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae,
+    :AIDS, :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient56 :hasDisease :Allergy, :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae,
+    :AIDS, :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient71 :hasDisease :Allergy, :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae,
+    :AIDS, :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient82 :hasDisease :Allergy, :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae,
+    :AIDS, :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Migraine,
+    :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid,
+    :hepatitis_A, :Hepatitis_B .
+
+:Patient91 :hasDisease :Allergy, :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae,
+    :AIDS, :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient39 :hasDisease :GERD, :Chronic_cholestasis, :Drug_Reaction, :Peptic_ulcer_diseae,
+    :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient67 :hasDisease :GERD, :Chronic_cholestasis, :Drug_Reaction, :Peptic_ulcer_diseae,
+    :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient8 :hasDisease :GERD, :Peptic_ulcer_diseae, :Diabetes_, :Hypertension_, :Migraine,
+    :Paralysis__brain_hemorrhage_, :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient32 :hasDisease :GERD, :Peptic_ulcer_diseae, :Diabetes_, :Hypertension_, :Migraine,
+    :Paralysis__brain_hemorrhage_, :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient75 :hasDisease :GERD, :Peptic_ulcer_diseae, :Diabetes_, :Hypertension_, :Migraine,
+    :Paralysis__brain_hemorrhage_, :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient7 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Diabetes_,
+    :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient9 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :AIDS, :Diabetes_,
+    :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient15 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Diabetes_,
+    :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient18 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Diabetes_,
+    :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient27 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Dengue, :Typhoid, :hepatitis_A,
+    :Hepatitis_B .
+
+:Patient29 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :AIDS, :Diabetes_,
+    :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient35 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Migraine, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue,
+    :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient38 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient47 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Bronchial_Asthma, :Hypertension_, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria,
+    :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient58 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Diabetes_,
+    :Gastroenteritis, :Bronchial_Asthma, :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient64 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Diabetes_,
+    :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient65 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox,
+    :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient68 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox,
+    :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient69 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Hypertension_, :Migraine, :Cervical_spondylosis, :Paralysis__brain_hemorrhage_, :Jaundice,
+    :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient70 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Migraine, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue,
+    :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient73 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Diabetes_,
+    :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient78 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :AIDS, :Diabetes_,
+    :Gastroenteritis, :Bronchial_Asthma, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient81 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox,
+    :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient84 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid,
+    :hepatitis_A, :Hepatitis_B .
+
+:Patient85 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox,
+    :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient89 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid,
+    :hepatitis_A, :Hepatitis_B .
+
+:Patient90 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Hypertension_, :Migraine, :Cervical_spondylosis, :Paralysis__brain_hemorrhage_, :Jaundice,
+    :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient96 :hasDisease :GERD, :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Paralysis__brain_hemorrhage_, :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid,
+    :hepatitis_A, :Hepatitis_B .
+
+:Patient17 :hasDisease :GERD, :AIDS, :Diabetes_, :Bronchial_Asthma, :Jaundice, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient22 :hasDisease :GERD, :Hypertension_, :Migraine, :Cervical_spondylosis, :Paralysis__brain_hemorrhage_,
+    :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient53 :hasDisease :GERD, :Bronchial_Asthma, :Hypertension_, :Malaria .
+
+:Patient79 :hasDisease :GERD, :Hypertension_, :Migraine, :Cervical_spondylosis, :Paralysis__brain_hemorrhage_,
+    :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient6 :hasDisease :Chronic_cholestasis, :Peptic_ulcer_diseae, :Gastroenteritis,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient19 :hasDisease :Chronic_cholestasis, :Peptic_ulcer_diseae, :Diabetes_, :Bronchial_Asthma,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient50 :hasDisease :Chronic_cholestasis, :Peptic_ulcer_diseae, :Diabetes_, :Bronchial_Asthma,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient28 :hasDisease :Chronic_cholestasis, :Peptic_ulcer_diseae, :Diabetes_, :Bronchial_Asthma,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient97 :hasDisease :Chronic_cholestasis, :Hypertension_, :Migraine, :Cervical_spondylosis,
+    :Paralysis__brain_hemorrhage_, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient92 :hasDisease :Drug_Reaction .
+
+:Patient26 :hasDisease :Peptic_ulcer_diseae, :Diabetes_, :Hypertension_, :Migraine,
+    :Paralysis__brain_hemorrhage_, :Malaria, :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient21 :hasDisease :AIDS, :Bronchial_Asthma, :Jaundice, :Malaria, :Chicken_pox,
+    :Dengue, :Typhoid .
+
+:Patient3 :hasDisease :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Migraine,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A, :Hepatitis_B .
+
+:Patient20 :hasDisease :Diabetes_, :Bronchial_Asthma, :Jaundice, :Chicken_pox, :Dengue,
+    :Typhoid .
+
+:Patient31 :hasDisease :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Migraine,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient43 :hasDisease :Diabetes_, :Bronchial_Asthma, :Migraine, :Jaundice, :Chicken_pox,
+    :Dengue, :Typhoid .
+
+:Patient83 :hasDisease :Diabetes_, :Bronchial_Asthma, :Migraine, :Jaundice, :Chicken_pox,
+    :Dengue, :Typhoid .
+
+:Patient88 :hasDisease :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Migraine,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient99 :hasDisease :Diabetes_, :Gastroenteritis, :Bronchial_Asthma, :Migraine,
+    :Jaundice, :Malaria, :Chicken_pox, :Dengue, :Typhoid, :hepatitis_A .
+
+:Patient33 :hasDisease :Hypertension_, :Migraine, :Paralysis__brain_hemorrhage_, :Malaria,
+    :Chicken_pox, :Dengue, :Typhoid .
+
+:Patient34 :hasDisease :Hypertension_, :Cervical_spondylosis, :Dengue .
+
+:Patient37 :hasDisease :Hypertension_, :Cervical_spondylosis, :Dengue .
+
+:Patient72 :hasDisease :Hypertension_, :Cervical_spondylosis, :Dengue .
+
+:Patient94 :hasDisease :Hypertension_, :Cervical_spondylosis, :Dengue .
+
+:Patient51 :hasDisease :Migraine .
+
+:Patient63 :hasDisease :Migraine .
+
+:Patient93 :hasDisease :Migraine .
+
+:Patient95 :hasDisease :Migraine .
+
+:Patient11 :hasDisease :Cervical_spondylosis, :Dengue, :hepatitis_A .
+
+:Patient62 :hasDisease :Cervical_spondylosis, :Dengue, :hepatitis_A .
+
+:Patient87 :hasDisease :Cervical_spondylosis, :Dengue, :hepatitis_A .
+
+:Patient30 :hasDisease :Typhoid .
+
+:Patient49 :hasDisease :Typhoid .
+
+:Patient52 :hasDisease :Typhoid .
+
+:Patient80 :hasDisease :Typhoid .
+
+:Patient5 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia .
+
+:Patient7 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient9 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Psoriasis, :Impetigo .
+
+:Patient10 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Dimorphic_hemmorhoids_piles_, :Varicose_veins,
+    :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Impetigo .
+
+:Patient15 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient17 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia, :Impetigo .
+
+:Patient18 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Psoriasis .
+
+:Patient19 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient20 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia .
+
+:Patient25 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia,
+    :_vertigo__Paroymsal__Positional_Vertigo, :Acne, :Psoriasis, :Impetigo .
+
+:Patient28 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia,
+    :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient29 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Psoriasis, :Impetigo .
+
+:Patient31 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia, :Arthritis .
+
+:Patient36 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient40 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient41 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient42 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo, :Acne,
+    :Psoriasis, :Impetigo .
+
+:Patient43 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia .
+
+:Patient44 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia,
+    :_vertigo__Paroymsal__Positional_Vertigo, :Acne, :Psoriasis, :Impetigo .
+
+:Patient50 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient55 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia .
+
+:Patient56 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient58 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient59 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient64 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Psoriasis .
+
+:Patient66 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient71 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Dimorphic_hemmorhoids_piles_, :Heart_attack,
+    :Varicose_veins, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Impetigo .
+
+:Patient73 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Psoriasis .
+
+:Patient74 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient78 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism,
+    :Hyperthyroidism, :Hypoglycemia, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Psoriasis, :Impetigo .
+
+:Patient82 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Dimorphic_hemmorhoids_piles_, :Heart_attack,
+    :Varicose_veins, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Impetigo .
+
+:Patient83 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia .
+
+:Patient86 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient88 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia, :Arthritis .
+
+:Patient99 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism,
+    :Hypoglycemia, :Arthritis .
+
+:Patient6 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Hyperthyroidism, :Hypoglycemia, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo,
+    :Psoriasis .
+
+:Patient84 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Heart_attack, :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient48 :hasDisease :Hepatitis_B, :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Hypoglycemia, :Osteoarthristis,
+    :_vertigo__Paroymsal__Positional_Vertigo, :Acne, :Psoriasis, :Impetigo .
+
+:Patient4 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient27 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient89 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient96 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient46 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Hyperthyroidism, :Hypoglycemia,
+    :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient69 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient91 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Hyperthyroidism, :Hypoglycemia,
+    :_vertigo__Paroymsal__Positional_Vertigo, :Impetigo .
+
+:Patient97 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Common_Cold, :Hypoglycemia,
+    :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient1 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient35 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient70 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis,
+    :Tuberculosis, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient3 :hasDisease :Hepatitis_C, :Hepatitis_D, :Hepatitis_E, :Tuberculosis, :Common_Cold,
+    :Pneumonia, :Heart_attack, :Varicose_veins, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia,
+    :Arthritis .
+
+:Patient38 :hasDisease :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis, :Tuberculosis,
+    :Heart_attack, :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient39 :hasDisease :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient47 :hasDisease :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Heart_attack, :Hyperthyroidism, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient65 :hasDisease :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis, :Tuberculosis,
+    :Common_Cold, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient67 :hasDisease :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis, :Tuberculosis,
+    :Common_Cold, :Pneumonia, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient68 :hasDisease :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis, :Tuberculosis,
+    :Common_Cold, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient81 :hasDisease :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis, :Tuberculosis,
+    :Common_Cold, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient85 :hasDisease :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis, :Tuberculosis,
+    :Common_Cold, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient90 :hasDisease :Hepatitis_D, :Hepatitis_E, :Alcoholic_hepatitis, :Tuberculosis,
+    :Common_Cold, :Heart_attack, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient2 :hasDisease :Hepatitis_D, :Hepatitis_E, :Osteoarthristis, :Acne, :Psoriasis,
+    :Impetigo .
+
+:Patient11 :hasDisease :Hepatitis_D, :Hepatitis_E, :Osteoarthristis, :Arthritis, :Psoriasis .
+
+:Patient57 :hasDisease :Hepatitis_D, :Hepatitis_E, :Osteoarthristis, :Acne, :Psoriasis,
+    :Impetigo .
+
+:Patient62 :hasDisease :Hepatitis_D, :Hepatitis_E, :Osteoarthristis, :Arthritis, :Psoriasis .
+
+:Patient77 :hasDisease :Hepatitis_D, :Hepatitis_E, :Osteoarthristis, :Acne, :Psoriasis,
+    :Impetigo .
+
+:Patient87 :hasDisease :Hepatitis_D, :Hepatitis_E, :Osteoarthristis, :Arthritis, :Psoriasis .
+
+:Patient14 :hasDisease :Hepatitis_E, :Tuberculosis, :Common_Cold, :Pneumonia, :Acne,
+    :Psoriasis, :Impetigo .
+
+:Patient21 :hasDisease :Hepatitis_E, :Tuberculosis, :Common_Cold, :Pneumonia, :Impetigo .
+
+:Patient23 :hasDisease :Hepatitis_E, :Tuberculosis, :Common_Cold, :Pneumonia, :Acne,
+    :Psoriasis, :Impetigo .
+
+:Patient45 :hasDisease :Hepatitis_E, :Tuberculosis, :Common_Cold, :Pneumonia, :Acne,
+    :Psoriasis, :Impetigo .
+
+:Patient76 :hasDisease :Hepatitis_E, :Tuberculosis, :Common_Cold, :Pneumonia, :Acne,
+    :Psoriasis, :Impetigo .
+
+:Patient60 :hasDisease :Tuberculosis, :Common_Cold, :Pneumonia .
+
+:Patient22 :hasDisease :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Hypothyroidism,
+    :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient53 :hasDisease :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Hyperthyroidism,
+    :Hypoglycemia .
+
+:Patient79 :hasDisease :Tuberculosis, :Common_Cold, :Pneumonia, :Heart_attack, :Hypothyroidism,
+    :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient98 :hasDisease :Common_Cold .
+
+:Patient8 :hasDisease :Common_Cold, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia,
+    :Arthritis, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient26 :hasDisease :Common_Cold, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia,
+    :Arthritis, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient32 :hasDisease :Common_Cold, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia,
+    :Arthritis, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient33 :hasDisease :Common_Cold, :Hypoglycemia, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient75 :hasDisease :Common_Cold, :Hypothyroidism, :Hyperthyroidism, :Hypoglycemia,
+    :Arthritis, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient30 :hasDisease :Dimorphic_hemmorhoids_piles_ .
+
+:Patient49 :hasDisease :Dimorphic_hemmorhoids_piles_ .
+
+:Patient52 :hasDisease :Dimorphic_hemmorhoids_piles_ .
+
+:Patient80 :hasDisease :Dimorphic_hemmorhoids_piles_ .
+
+:Patient34 :hasDisease :Hypothyroidism, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient37 :hasDisease :Hypothyroidism, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient72 :hasDisease :Hypothyroidism, :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient51 :hasDisease :Hyperthyroidism, :Osteoarthristis, :Arthritis .
+
+:Patient63 :hasDisease :Hyperthyroidism, :Osteoarthristis, :Arthritis .
+
+:Patient93 :hasDisease :Hyperthyroidism, :Osteoarthristis, :Arthritis .
+
+:Patient95 :hasDisease :Hyperthyroidism, :Osteoarthristis, :Arthritis .
+
+:Patient94 :hasDisease :Osteoarthristis, :_vertigo__Paroymsal__Positional_Vertigo .
+
+:Patient12 :hasDisease :Acne, :Psoriasis, :Impetigo .
+
+:Patient13 :hasDisease :Acne, :Psoriasis, :Impetigo .
+
+:Patient16 :hasDisease :Acne, :Psoriasis, :Impetigo .
+
+:Patient24 :hasDisease :Acne, :Psoriasis, :Impetigo .
+
+:Patient54 :hasDisease :Acne, :Urinary_tract_infection, :Psoriasis, :Impetigo .
+
+:Patient100 :hasDisease :Acne, :Psoriasis, :Impetigo .
+
+:Patient61 :hasDisease :Acne .
+
+:Patient92 :hasDisease :Urinary_tract_infection .

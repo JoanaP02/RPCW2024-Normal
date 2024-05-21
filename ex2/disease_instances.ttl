@@ -1,0 +1,576 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/historia/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes
+:Disease a owl:Class .
+:Symptom a owl:Class .
+
+# Properties
+:hasSymptom a owl:ObjectProperty ;
+    rdfs:domain :Disease ;
+    rdfs:range :Symptom .
+
+:hasName a owl:DatatypeProperty ;
+    rdfs:domain [ :Disease, :Symptom ] ;
+    rdfs:range xsd:string .
+
+:indigestion a :Symptom ;
+    :hasName "indigestion"^^xsd:string .
+
+:muscle_wasting a :Symptom ;
+    :hasName "muscle wasting"^^xsd:string .
+
+:internal_itching a :Symptom ;
+    :hasName "internal itching"^^xsd:string .
+
+:rusty_sputum a :Symptom ;
+    :hasName "rusty sputum"^^xsd:string .
+
+:pus_filled_pimples a :Symptom ;
+    :hasName "pus filled pimples"^^xsd:string .
+
+:blackheads a :Symptom ;
+    :hasName "blackheads"^^xsd:string .
+
+:cramps a :Symptom ;
+    :hasName "cramps"^^xsd:string .
+
+:chest_pain a :Symptom ;
+    :hasName "chest pain"^^xsd:string .
+
+:cold_hands_and_feets a :Symptom ;
+    :hasName "cold hands and feets"^^xsd:string .
+
+:irritability a :Symptom ;
+    :hasName "irritability"^^xsd:string .
+
+:painful_walking a :Symptom ;
+    :hasName "painful walking"^^xsd:string .
+
+:fatigue a :Symptom ;
+    :hasName "fatigue"^^xsd:string .
+
+:prominent_veins_on_calf a :Symptom ;
+    :hasName "prominent veins on calf"^^xsd:string .
+
+:sunken_eyes a :Symptom ;
+    :hasName "sunken eyes"^^xsd:string .
+
+:runny_nose a :Symptom ;
+    :hasName "runny nose"^^xsd:string .
+
+:fluid_overload a :Symptom ;
+    :hasName "fluid overload"^^xsd:string .
+
+:knee_pain a :Symptom ;
+    :hasName "knee pain"^^xsd:string .
+
+:visual_disturbances a :Symptom ;
+    :hasName "visual disturbances"^^xsd:string .
+
+:belly_pain a :Symptom ;
+    :hasName "belly pain"^^xsd:string .
+
+:weight_loss a :Symptom ;
+    :hasName "weight loss"^^xsd:string .
+
+:headache a :Symptom ;
+    :hasName "headache"^^xsd:string .
+
+:muscle_weakness a :Symptom ;
+    :hasName "muscle weakness"^^xsd:string .
+
+:diarrhoea a :Symptom ;
+    :hasName "diarrhoea"^^xsd:string .
+
+:malaise a :Symptom ;
+    :hasName "malaise"^^xsd:string .
+
+:yellow_urine a :Symptom ;
+    :hasName "yellow urine"^^xsd:string .
+
+:distention_of_abdomen a :Symptom ;
+    :hasName "distention of abdomen"^^xsd:string .
+
+:loss_of_appetite a :Symptom ;
+    :hasName "loss of appetite"^^xsd:string .
+
+:patches_in_throat a :Symptom ;
+    :hasName "patches in throat"^^xsd:string .
+
+:pain_behind_the_eyes a :Symptom ;
+    :hasName "pain behind the eyes"^^xsd:string .
+
+:continuous_feel_of_urine a :Symptom ;
+    :hasName "continuous feel of urine"^^xsd:string .
+
+:movement_stiffness a :Symptom ;
+    :hasName "movement stiffness"^^xsd:string .
+
+:extra_marital_contacts a :Symptom ;
+    :hasName "extra marital contacts"^^xsd:string .
+
+:unsteadiness a :Symptom ;
+    :hasName "unsteadiness"^^xsd:string .
+
+:ulcers_on_tongue a :Symptom ;
+    :hasName "ulcers on tongue"^^xsd:string .
+
+:swollen_extremeties a :Symptom ;
+    :hasName "swollen extremeties"^^xsd:string .
+
+:excessive_hunger a :Symptom ;
+    :hasName "excessive hunger"^^xsd:string .
+
+:obesity a :Symptom ;
+    :hasName "obesity"^^xsd:string .
+
+:passage_of_gases a :Symptom ;
+    :hasName "passage of gases"^^xsd:string .
+
+:anxiety a :Symptom ;
+    :hasName "anxiety"^^xsd:string .
+
+:acidity a :Symptom ;
+    :hasName "acidity"^^xsd:string .
+
+:congestion a :Symptom ;
+    :hasName "congestion"^^xsd:string .
+
+:foul_smell_of_urine a :Symptom ;
+    :hasName "foul smell of urine"^^xsd:string .
+
+:joint_pain a :Symptom ;
+    :hasName "joint pain"^^xsd:string .
+
+:yellowing_of_eyes a :Symptom ;
+    :hasName "yellowing of eyes"^^xsd:string .
+
+:irritation_in_anus a :Symptom ;
+    :hasName "irritation in anus"^^xsd:string .
+
+:scurring a :Symptom ;
+    :hasName "scurring"^^xsd:string .
+
+:skin_rash a :Symptom ;
+    :hasName "skin rash"^^xsd:string .
+
+:drying_and_tingling_lips a :Symptom ;
+    :hasName "drying and tingling lips"^^xsd:string .
+
+:spotting__urination a :Symptom ;
+    :hasName "spotting  urination"^^xsd:string .
+
+:loss_of_smell a :Symptom ;
+    :hasName "loss of smell"^^xsd:string .
+
+:hip_joint_pain a :Symptom ;
+    :hasName "hip joint pain"^^xsd:string .
+
+:spinning_movements a :Symptom ;
+    :hasName "spinning movements"^^xsd:string .
+
+:weight_gain a :Symptom ;
+    :hasName "weight gain"^^xsd:string .
+
+:pain_in_anal_region a :Symptom ;
+    :hasName "pain in anal region"^^xsd:string .
+
+:palpitations a :Symptom ;
+    :hasName "palpitations"^^xsd:string .
+
+:altered_sensorium a :Symptom ;
+    :hasName "altered sensorium"^^xsd:string .
+
+:redness_of_eyes a :Symptom ;
+    :hasName "redness of eyes"^^xsd:string .
+
+:yellowish_skin a :Symptom ;
+    :hasName "yellowish skin"^^xsd:string .
+
+:mood_swings a :Symptom ;
+    :hasName "mood swings"^^xsd:string .
+
+:history_of_alcohol_consumption a :Symptom ;
+    :hasName "history of alcohol consumption"^^xsd:string .
+
+:family_history a :Symptom ;
+    :hasName "family history"^^xsd:string .
+
+:depression a :Symptom ;
+    :hasName "depression"^^xsd:string .
+
+:swollen_blood_vessels a :Symptom ;
+    :hasName "swollen blood vessels"^^xsd:string .
+
+:swelling_of_stomach a :Symptom ;
+    :hasName "swelling of stomach"^^xsd:string .
+
+:weakness_of_one_body_side a :Symptom ;
+    :hasName "weakness of one body side"^^xsd:string .
+
+:sweating a :Symptom ;
+    :hasName "sweating"^^xsd:string .
+
+:slurred_speech a :Symptom ;
+    :hasName "slurred speech"^^xsd:string .
+
+:sinus_pressure a :Symptom ;
+    :hasName "sinus pressure"^^xsd:string .
+
+:abnormal_menstruation a :Symptom ;
+    :hasName "abnormal menstruation"^^xsd:string .
+
+:bruising a :Symptom ;
+    :hasName "bruising"^^xsd:string .
+
+:loss_of_balance a :Symptom ;
+    :hasName "loss of balance"^^xsd:string .
+
+:dizziness a :Symptom ;
+    :hasName "dizziness"^^xsd:string .
+
+:swelled_lymph_nodes a :Symptom ;
+    :hasName "swelled lymph nodes"^^xsd:string .
+
+:cough a :Symptom ;
+    :hasName "cough"^^xsd:string .
+
+:restlessness a :Symptom ;
+    :hasName "restlessness"^^xsd:string .
+
+:coma a :Symptom ;
+    :hasName "coma"^^xsd:string .
+
+:lack_of_concentration a :Symptom ;
+    :hasName "lack of concentration"^^xsd:string .
+
+:swelling_joints a :Symptom ;
+    :hasName "swelling joints"^^xsd:string .
+
+:vomiting a :Symptom ;
+    :hasName "vomiting"^^xsd:string .
+
+:pain_during_bowel_movements a :Symptom ;
+    :hasName "pain during bowel movements"^^xsd:string .
+
+:shivering a :Symptom ;
+    :hasName "shivering"^^xsd:string .
+
+:enlarged_thyroid a :Symptom ;
+    :hasName "enlarged thyroid"^^xsd:string .
+
+:mild_fever a :Symptom ;
+    :hasName "mild fever"^^xsd:string .
+
+:receiving_unsterile_injections a :Symptom ;
+    :hasName "receiving unsterile injections"^^xsd:string .
+
+:burning_micturition a :Symptom ;
+    :hasName "burning micturition"^^xsd:string .
+
+:constipation a :Symptom ;
+    :hasName "constipation"^^xsd:string .
+
+:muscle_pain a :Symptom ;
+    :hasName "muscle pain"^^xsd:string .
+
+:blister a :Symptom ;
+    :hasName "blister"^^xsd:string .
+
+:small_dents_in_nails a :Symptom ;
+    :hasName "small dents in nails"^^xsd:string .
+
+:swollen_legs a :Symptom ;
+    :hasName "swollen legs"^^xsd:string .
+
+:itching a :Symptom ;
+    :hasName "itching"^^xsd:string .
+
+:mucoid_sputum a :Symptom ;
+    :hasName "mucoid sputum"^^xsd:string .
+
+:nausea a :Symptom ;
+    :hasName "nausea"^^xsd:string .
+
+:abdominal_pain a :Symptom ;
+    :hasName "abdominal pain"^^xsd:string .
+
+:throat_irritation a :Symptom ;
+    :hasName "throat irritation"^^xsd:string .
+
+:dischromic__patches a :Symptom ;
+    :hasName "dischromic  patches"^^xsd:string .
+
+:blood_in_sputum a :Symptom ;
+    :hasName "blood in sputum"^^xsd:string .
+
+:phlegm a :Symptom ;
+    :hasName "phlegm"^^xsd:string .
+
+:breathlessness a :Symptom ;
+    :hasName "breathlessness"^^xsd:string .
+
+:blurred_and_distorted_vision a :Symptom ;
+    :hasName "blurred and distorted vision"^^xsd:string .
+
+:high_fever a :Symptom ;
+    :hasName "high fever"^^xsd:string .
+
+:dark_urine a :Symptom ;
+    :hasName "dark urine"^^xsd:string .
+
+:skin_peeling a :Symptom ;
+    :hasName "skin peeling"^^xsd:string .
+
+:red_sore_around_nose a :Symptom ;
+    :hasName "red sore around nose"^^xsd:string .
+
+:continuous_sneezing a :Symptom ;
+    :hasName "continuous sneezing"^^xsd:string .
+
+:weakness_in_limbs a :Symptom ;
+    :hasName "weakness in limbs"^^xsd:string .
+
+:inflammatory_nails a :Symptom ;
+    :hasName "inflammatory nails"^^xsd:string .
+
+:receiving_blood_transfusion a :Symptom ;
+    :hasName "receiving blood transfusion"^^xsd:string .
+
+:lethargy a :Symptom ;
+    :hasName "lethargy"^^xsd:string .
+
+:watering_from_eyes a :Symptom ;
+    :hasName "watering from eyes"^^xsd:string .
+
+:polyuria a :Symptom ;
+    :hasName "polyuria"^^xsd:string .
+
+:red_spots_over_body a :Symptom ;
+    :hasName "red spots over body"^^xsd:string .
+
+:fast_heart_rate a :Symptom ;
+    :hasName "fast heart rate"^^xsd:string .
+
+:chills a :Symptom ;
+    :hasName "chills"^^xsd:string .
+
+:nodal_skin_eruptions a :Symptom ;
+    :hasName "nodal skin eruptions"^^xsd:string .
+
+:irregular_sugar_level a :Symptom ;
+    :hasName "irregular sugar level"^^xsd:string .
+
+:bladder_discomfort a :Symptom ;
+    :hasName "bladder discomfort"^^xsd:string .
+
+:back_pain a :Symptom ;
+    :hasName "back pain"^^xsd:string .
+
+:stiff_neck a :Symptom ;
+    :hasName "stiff neck"^^xsd:string .
+
+:bloody_stool a :Symptom ;
+    :hasName "bloody stool"^^xsd:string .
+
+:increased_appetite a :Symptom ;
+    :hasName "increased appetite"^^xsd:string .
+
+:yellow_crust_ooze a :Symptom ;
+    :hasName "yellow crust ooze"^^xsd:string .
+
+:acute_liver_failure a :Symptom ;
+    :hasName "acute liver failure"^^xsd:string .
+
+:brittle_nails a :Symptom ;
+    :hasName "brittle nails"^^xsd:string .
+
+:silver_like_dusting a :Symptom ;
+    :hasName "silver like dusting"^^xsd:string .
+
+:stomach_pain a :Symptom ;
+    :hasName "stomach pain"^^xsd:string .
+
+:toxic_look_(typhos) a :Symptom ;
+    :hasName "toxic look (typhos)"^^xsd:string .
+
+:dehydration a :Symptom ;
+    :hasName "dehydration"^^xsd:string .
+
+:neck_pain a :Symptom ;
+    :hasName "neck pain"^^xsd:string .
+
+:stomach_bleeding a :Symptom ;
+    :hasName "stomach bleeding"^^xsd:string .
+
+:puffy_face_and_eyes a :Symptom ;
+    :hasName "puffy face and eyes"^^xsd:string .
+
+:Fungal_infection a :Disease ;
+    :hasName "Fungal infection"^^xsd:string ;
+    :hasSymptom :itching, :nodal_skin_eruptions, :dischromic__patches, :skin_rash .
+
+:Allergy a :Disease ;
+    :hasName "Allergy"^^xsd:string ;
+    :hasSymptom :continuous_sneezing, :shivering, :chills, :watering_from_eyes .
+
+:GERD a :Disease ;
+    :hasName "GERD"^^xsd:string ;
+    :hasSymptom :chest_pain, :cough, :acidity, :stomach_pain, :ulcers_on_tongue, :vomiting .
+
+:Chronic_cholestasis a :Disease ;
+    :hasName "Chronic cholestasis"^^xsd:string ;
+    :hasSymptom :itching, :yellowish_skin, :nausea, :yellowing_of_eyes, :abdominal_pain, :loss_of_appetite, :vomiting .
+
+:Drug_Reaction a :Disease ;
+    :hasName "Drug Reaction"^^xsd:string ;
+    :hasSymptom :itching, :skin_rash, :spotting__urination, :burning_micturition, :stomach_pain .
+
+:Peptic_ulcer_diseae a :Disease ;
+    :hasName "Peptic ulcer diseae"^^xsd:string ;
+    :hasSymptom :passage_of_gases, :indigestion, :internal_itching, :abdominal_pain, :loss_of_appetite, :vomiting .
+
+:AIDS a :Disease ;
+    :hasName "AIDS"^^xsd:string ;
+    :hasSymptom :patches_in_throat, :extra_marital_contacts, :muscle_wasting, :high_fever .
+
+:Diabetes a :Disease ;
+    :hasName "Diabetes"^^xsd:string ;
+    :hasSymptom :obesity, :polyuria, :fatigue, :restlessness, :excessive_hunger, :irregular_sugar_level, :blurred_and_distorted_vision, :increased_appetite, :weight_loss, :lethargy .
+
+:Gastroenteritis a :Disease ;
+    :hasName "Gastroenteritis"^^xsd:string ;
+    :hasSymptom :sunken_eyes, :diarrhoea, :vomiting, :dehydration .
+
+:Bronchial_Asthma a :Disease ;
+    :hasName "Bronchial Asthma"^^xsd:string ;
+    :hasSymptom :breathlessness, :cough, :fatigue, :mucoid_sputum, :family_history, :high_fever .
+
+:Hypertension a :Disease ;
+    :hasName "Hypertension"^^xsd:string ;
+    :hasSymptom :chest_pain, :dizziness, :lack_of_concentration, :loss_of_balance, :headache .
+
+:Migraine a :Disease ;
+    :hasName "Migraine"^^xsd:string ;
+    :hasSymptom :irritability, :acidity, :indigestion, :blurred_and_distorted_vision, :visual_disturbances, :stiff_neck, :depression, :headache, :excessive_hunger .
+
+:Cervical_spondylosis a :Disease ;
+    :hasName "Cervical spondylosis"^^xsd:string ;
+    :hasSymptom :dizziness, :weakness_in_limbs, :back_pain, :neck_pain, :loss_of_balance .
+
+:Paralysis_(brain_hemorrhage) a :Disease ;
+    :hasName "Paralysis (brain hemorrhage)"^^xsd:string ;
+    :hasSymptom :weakness_of_one_body_side, :headache, :altered_sensorium, :vomiting .
+
+:Jaundice a :Disease ;
+    :hasName "Jaundice"^^xsd:string ;
+    :hasSymptom :dark_urine, :itching, :fatigue, :yellowish_skin, :high_fever, :abdominal_pain, :weight_loss, :vomiting .
+
+:Malaria a :Disease ;
+    :hasName "Malaria"^^xsd:string ;
+    :hasSymptom :diarrhoea, :sweating, :chills, :nausea, :high_fever, :muscle_pain, :headache, :vomiting .
+
+:Chicken_pox a :Disease ;
+    :hasName "Chicken pox"^^xsd:string ;
+    :hasSymptom :itching, :swelled_lymph_nodes, :fatigue, :skin_rash, :red_spots_over_body, :malaise, :mild_fever, :high_fever, :loss_of_appetite, :headache, :lethargy .
+
+:Dengue a :Disease ;
+    :hasName "Dengue"^^xsd:string ;
+    :hasSymptom :fatigue, :skin_rash, :red_spots_over_body, :joint_pain, :chills, :nausea, :malaise, :high_fever, :back_pain, :muscle_pain, :loss_of_appetite, :headache, :vomiting, :pain_behind_the_eyes .
+
+:Typhoid a :Disease ;
+    :hasName "Typhoid"^^xsd:string ;
+    :hasSymptom :diarrhoea, :fatigue, :chills, :nausea, :constipation, :high_fever, :toxic_look_(typhos), :abdominal_pain, :belly_pain, :headache, :vomiting .
+
+:hepatitis_A a :Disease ;
+    :hasName "hepatitis A"^^xsd:string ;
+    :hasSymptom :dark_urine, :diarrhoea, :yellowish_skin, :joint_pain, :nausea, :mild_fever, :yellowing_of_eyes, :abdominal_pain, :muscle_pain, :loss_of_appetite, :vomiting .
+
+:Hepatitis_B a :Disease ;
+    :hasName "Hepatitis B"^^xsd:string ;
+    :hasSymptom :dark_urine, :itching, :fatigue, :yellowish_skin, :malaise, :yellow_urine, :receiving_unsterile_injections, :yellowing_of_eyes, :abdominal_pain, :loss_of_appetite, :receiving_blood_transfusion, :lethargy .
+
+:Hepatitis_C a :Disease ;
+    :hasName "Hepatitis C"^^xsd:string ;
+    :hasSymptom :fatigue, :yellowish_skin, :nausea, :yellowing_of_eyes, :family_history, :loss_of_appetite .
+
+:Hepatitis_D a :Disease ;
+    :hasName "Hepatitis D"^^xsd:string ;
+    :hasSymptom :dark_urine, :fatigue, :yellowish_skin, :joint_pain, :nausea, :yellowing_of_eyes, :abdominal_pain, :loss_of_appetite, :vomiting .
+
+:Hepatitis_E a :Disease ;
+    :hasName "Hepatitis E"^^xsd:string ;
+    :hasSymptom :dark_urine, :fatigue, :coma, :yellowish_skin, :joint_pain, :nausea, :yellowing_of_eyes, :high_fever, :abdominal_pain, :stomach_bleeding, :loss_of_appetite, :vomiting, :acute_liver_failure .
+
+:Alcoholic_hepatitis a :Disease ;
+    :hasName "Alcoholic hepatitis"^^xsd:string ;
+    :hasSymptom :yellowish_skin, :history_of_alcohol_consumption, :fluid_overload, :distention_of_abdomen, :abdominal_pain, :swelling_of_stomach, :vomiting .
+
+:Tuberculosis a :Disease ;
+    :hasName "Tuberculosis"^^xsd:string ;
+    :hasSymptom :phlegm, :chest_pain, :sweating, :cough, :fatigue, :breathlessness, :swelled_lymph_nodes, :malaise, :chills, :mild_fever, :yellowing_of_eyes, :high_fever, :loss_of_appetite, :weight_loss, :vomiting, :blood_in_sputum .
+
+:Common_Cold a :Disease ;
+    :hasName "Common Cold"^^xsd:string ;
+    :hasSymptom :phlegm, :chest_pain, :swelled_lymph_nodes, :cough, :fatigue, :redness_of_eyes, :congestion, :continuous_sneezing, :malaise, :chills, :runny_nose, :sinus_pressure, :loss_of_smell, :high_fever, :muscle_pain, :throat_irritation, :headache .
+
+:Pneumonia a :Disease ;
+    :hasName "Pneumonia"^^xsd:string ;
+    :hasSymptom :chest_pain, :phlegm, :sweating, :breathlessness, :cough, :fatigue, :fast_heart_rate, :malaise, :chills, :rusty_sputum, :high_fever .
+
+:Dimorphic_hemmorhoids(piles) a :Disease ;
+    :hasName "Dimorphic hemmorhoids(piles)"^^xsd:string ;
+    :hasSymptom :pain_during_bowel_movements, :irritation_in_anus, :constipation, :pain_in_anal_region, :bloody_stool .
+
+:Heart_attack a :Disease ;
+    :hasName "Heart attack"^^xsd:string ;
+    :hasSymptom :chest_pain, :sweating, :breathlessness, :vomiting .
+
+:Varicose_veins a :Disease ;
+    :hasName "Varicose veins"^^xsd:string ;
+    :hasSymptom :obesity, :swollen_legs, :fatigue, :prominent_veins_on_calf, :swollen_blood_vessels, :bruising, :cramps .
+
+:Hypothyroidism a :Disease ;
+    :hasName "Hypothyroidism"^^xsd:string ;
+    :hasSymptom :dizziness, :cold_hands_and_feets, :irritability, :fatigue, :brittle_nails, :mood_swings, :enlarged_thyroid, :abnormal_menstruation, :weight_gain, :depression, :swollen_extremeties, :lethargy, :puffy_face_and_eyes .
+
+:Hyperthyroidism a :Disease ;
+    :hasName "Hyperthyroidism"^^xsd:string ;
+    :hasSymptom :diarrhoea, :sweating, :irritability, :fatigue, :restlessness, :fast_heart_rate, :mood_swings, :abnormal_menstruation, :weight_loss, :excessive_hunger, :muscle_weakness .
+
+:Hypoglycemia a :Disease ;
+    :hasName "Hypoglycemia"^^xsd:string ;
+    :hasSymptom :anxiety, :sweating, :irritability, :fatigue, :drying_and_tingling_lips, :excessive_hunger, :nausea, :slurred_speech, :blurred_and_distorted_vision, :palpitations, :headache, :vomiting .
+
+:Osteoarthristis a :Disease ;
+    :hasName "Osteoarthristis"^^xsd:string ;
+    :hasSymptom :painful_walking, :joint_pain, :knee_pain, :hip_joint_pain, :neck_pain, :swelling_joints .
+
+:Arthritis a :Disease ;
+    :hasName "Arthritis"^^xsd:string ;
+    :hasSymptom :painful_walking, :movement_stiffness, :stiff_neck, :swelling_joints, :muscle_weakness .
+
+:(vertigo)_Paroymsal__Positional_Vertigo a :Disease ;
+    :hasName "(vertigo) Paroymsal  Positional Vertigo"^^xsd:string ;
+    :hasSymptom :nausea, :unsteadiness, :spinning_movements, :loss_of_balance, :headache, :vomiting .
+
+:Acne a :Disease ;
+    :hasName "Acne"^^xsd:string ;
+    :hasSymptom :blackheads, :pus_filled_pimples, :scurring, :skin_rash .
+
+:Urinary_tract_infection a :Disease ;
+    :hasName "Urinary tract infection"^^xsd:string ;
+    :hasSymptom :burning_micturition, :foul_smell_of_urine, :continuous_feel_of_urine, :bladder_discomfort .
+
+:Psoriasis a :Disease ;
+    :hasName "Psoriasis"^^xsd:string ;
+    :hasSymptom :skin_peeling, :skin_rash, :joint_pain, :silver_like_dusting, :inflammatory_nails, :small_dents_in_nails .
+
+:Impetigo a :Disease ;
+    :hasName "Impetigo"^^xsd:string ;
+    :hasSymptom :red_sore_around_nose, :skin_rash, :blister, :high_fever, :yellow_crust_ooze .
+

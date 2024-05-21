@@ -1,0 +1,46 @@
+12-
+
+PREFIX : <http://www.example.org/disease-ontology#>
+construct {
+    ?p :hasDisease ?d
+} where {
+    ?s a :Symptom .
+
+    ?p a :Patient ;
+       :exhibitsSymptom ?s .
+
+    ?d a :Disease ;
+       :hasSymptom ?s .
+}
+
+13-
+
+PREFIX : <http://www.example.org/disease-ontology#>
+
+SELECT ?disease (COUNT(?patient) AS ?patientCount)
+WHERE {
+  ?patient a :Patient ;
+           :hasDisease ?disease .
+}
+GROUP BY ?disease
+
+14- 
+PREFIX : <http://www.example.org/disease-ontology#>
+
+SELECT ?symptom (COUNT(?disease) AS ?diseaseCount)
+WHERE {
+  ?disease a :Disease ;
+           :hasSymptom ?symptom .
+}
+GROUP BY ?symptom
+
+15- 
+
+PREFIX : <http://www.example.org/disease-ontology#>
+
+SELECT ?treatment (COUNT(?disease) AS ?diseaseCount)
+WHERE {
+  ?disease a :Disease ;
+           :hasTreatment ?treatment .
+}
+GROUP BY ?treatment

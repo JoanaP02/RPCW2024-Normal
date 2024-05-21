@@ -1,0 +1,189 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/historia/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/historia/> .
+
+<http://rpcw.di.uminho.pt/2024/historia> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/historia#contrataTrabalhadoresT
+:contrataTrabalhadoresT rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Pessoa ;
+                        rdfs:range :TrabalhadorTempoário .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#criaAnimais
+:criaAnimais rdf:type owl:ObjectProperty ;
+             rdfs:domain :Pessoa ;
+             rdfs:range :Animal .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#cultivaFruta
+:cultivaFruta rdf:type owl:ObjectProperty ;
+              rdfs:domain :Pessoa ;
+              rdfs:range :Fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#cultivaVegetais
+:cultivaVegetais rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Pessoa ;
+                 rdfs:range :Vegetal .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#temFazenda
+:temFazenda rdf:type owl:ObjectProperty ;
+            rdfs:domain :Pessoa ;
+            rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#trocaProdutos
+:trocaProdutos rdf:type owl:ObjectProperty ;
+               rdfs:domain :Pessoa ;
+               rdfs:range :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#vende
+:vende rdf:type owl:ObjectProperty ;
+       rdfs:domain :Pessoa ;
+       rdfs:range :Feira .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/historia#dia
+:dia rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#funcao_pessoa
+:funcao_pessoa rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#nome
+:nome rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#quantidade
+:quantidade rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#tamanho
+:tamanho rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#tipo
+:tipo rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/historia#Animal
+:Animal rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Fazenda
+:Fazenda rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Feira
+:Feira rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Fruta
+:Fruta rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Produto
+:Produto rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#TrabalhadorTempoário
+:TrabalhadorTempoário rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Vegetal
+:Vegetal rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/historia#Batatas
+:Batatas rdf:type owl:NamedIndividual ,
+                  :Vegetal ;
+         :quantidade 5 ;
+         :tipo "Batatas" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Carlos
+:Carlos rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :cultivaVegetais :Batatas ;
+        :temFazenda :fazenda2 ;
+        :trocaProdutos :João ;
+        :vende :Feira ;
+        :funcao_pessoa "Agricultor" ;
+        :nome "Carlos" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Feira
+:Feira rdf:type owl:NamedIndividual ,
+                :Feira ;
+       :dia "Sábados" ;
+       :nome "São José" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#João
+:João rdf:type owl:NamedIndividual ,
+               :Pessoa ;
+      :contrataTrabalhadoresT :Maria ;
+      :criaAnimais :Vaca ;
+      :cultivaVegetais :Batatas ;
+      :temFazenda :fazenda1 ;
+      :trocaProdutos :Carlos ;
+      :vende :Feira ;
+      :funcao_pessoa "Agricultor" ;
+      :nome "João" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Maria
+:Maria rdf:type owl:NamedIndividual ,
+                :Pessoa ;
+       :funcao_pessoa "trabalhador" ;
+       :nome "Maria" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#Vaca
+:Vaca rdf:type owl:NamedIndividual ,
+               :Animal ;
+      :quantidade 10 ;
+      :tipo "Vaca" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#fazenda1
+:fazenda1 rdf:type owl:NamedIndividual ,
+                   :Fazenda ;
+          :nome "fazendoJoão" .
+
+
+###  http://rpcw.di.uminho.pt/2024/historia#fazenda2
+:fazenda2 rdf:type owl:NamedIndividual ;
+          :trocaProdutos :João ;
+          :nome "fazendaCarlos" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
